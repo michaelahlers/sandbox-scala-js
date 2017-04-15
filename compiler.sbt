@@ -10,6 +10,6 @@ scalacOptions ++=
     "-deprecation" ::
     "-Xfatal-warnings" ::
     // "-Ywarn-dead-code" ::
-    "-Ywarn-unused-import" ::
+    // "-Ywarn-unused-import" ::
     // "-Xmax-classfile-name" :: "150" ::
     Nil
