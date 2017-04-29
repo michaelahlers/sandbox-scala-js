@@ -10,7 +10,12 @@ object Application extends JSApp {
 
   val HelloWorld =
     ScalaComponent.builder[String]("HelloWorld")
-      .render_P({ name => p("Hello, ", name, "!") })
+      .render_P({ name =>
+        div(
+          img(className := "ahlers-consulting-logo", width := "25%"),
+          p("Hello, ", name, "!")
+        )
+      })
       .build
 
   def main(): Unit = {

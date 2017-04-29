@@ -25,9 +25,10 @@ lazy val server =
       scalaVersion := Versions.Scala,
       scalacOptions ++= Compiler.scalacOptions,
       scalaJSProjects := clients,
-      compile in Compile <<= (compile in Compile)  dependsOn scalaJSPipeline ,
+      compile in Compile <<= (compile in Compile) dependsOn scalaJSPipeline,
       pipelineStages in Assets := scalaJSPipeline :: Nil,
-      pipelineStages := digest :: gzip :: Nil
+      pipelineStages := digest :: simpleUrlUpdate :: digest :: gzip :: Nil,
+      includeFilter in(Assets, LessKeys.less) := "index.less"
     )
 
 lazy val sandbox =
