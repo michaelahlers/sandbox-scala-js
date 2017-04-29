@@ -1,0 +1,16 @@
+@(implicit assetsFinder: AssetsFinder)
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Sandbox</title>
+  </head>
+  <body>
+    @scalajs.html.scripts(
+      "client",
+      name => assetsFinder.path(name).toString,
+      name => getClass.getResource(s"/public/$name") != null)
+  </body>
+</html>
