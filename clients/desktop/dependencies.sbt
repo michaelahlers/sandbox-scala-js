@@ -1,6 +1,6 @@
 libraryDependencies ++=
   "org.scala-js" %%% "scalajs-dom" % "0.9.1" ::
-    "com.github.japgolly.scalacss" %%% "ext-react" % "0.5.1" ::
+    "com.github.japgolly.scalacss" %%% "ext-react" % Versions.ScalaCSS ::
     "com.github.japgolly.scalajs-react" %%% "core" % Versions.`scalajs-react` ::
     "com.github.japgolly.scalajs-react" %%% "extra" % Versions.`scalajs-react` ::
     Nil
