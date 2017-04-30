@@ -1,4 +1,4 @@
-package ahlers.michael
+package ahlers.michael.sandbox.scalajs
 
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.all._
@@ -6,7 +6,7 @@ import org.scalajs.dom
 
 import scala.scalajs.js._
 
-object Application extends JSApp {
+object DesktopApplication extends JSApp {
 
   val HelloWorld =
     ScalaComponent.builder[String]("HelloWorld")

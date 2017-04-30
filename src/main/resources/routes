@@ -1,2 +1,2 @@
-GET        /                    ahlers.michael.Application.index
+GET        /                    ahlers.michael.sandbox.scalajs.Application.desktop
 GET        /assets/*file        controllers.Assets.versioned(file)

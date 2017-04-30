@@ -11,7 +11,7 @@ lazy val desktop =
       scalaVersion := Versions.Scala,
       scalacOptions ++= Compiler.scalacOptions,
       scalaJSUseMainModuleInitializer := true,
-      mainClass in Compile := Some("ahlers.michael.Application")
+      mainClass in Compile := Some("ahlers.michael.sandbox.scalajs.DesktopApplication")
     )
 
 // Client projects (could be many).
