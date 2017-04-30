@@ -4,20 +4,21 @@ name := "sandbox-scala-js"
 
 version := "1.0"
 
-lazy val client =
-  (project in file("modules") / "client")
+lazy val desktop =
+  (project in file("clients") / "desktop")
     .enablePlugins(ScalaJSPlugin, ScalaJSWeb)
     .settings(
       scalaVersion := Versions.Scala,
       scalacOptions ++= Compiler.scalacOptions,
-      scalaJSUseMainModuleInitializer := true
+      scalaJSUseMainModuleInitializer := true,
+      mainClass in Compile := Some("ahlers.michael.Application")
     )
 
 // Client projects (could be many).
-lazy val clients = Seq(client)
+lazy val clients = Seq(desktop)
 
 lazy val server =
-  (project in file("modules") / "server")
+  (project in file("."))
     .enablePlugins(PlayScala, SbtTwirl)
     .disablePlugins(PlayLayoutPlugin)
     .aggregate(clients.map(projectToRef): _*)
@@ -30,7 +31,3 @@ lazy val server =
       pipelineStages := digest :: simpleUrlUpdate :: digest :: gzip :: Nil,
       includeFilter in(Assets, LessKeys.less) := "index.less"
     )
-
-lazy val sandbox =
-  (project in file("."))
-    .aggregate(client, server)
